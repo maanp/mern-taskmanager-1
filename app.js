@@ -12,9 +12,9 @@ app.use(express.static("./public"));
 app.use(express.json());
 
 // routes
-// app.get('/hello',(req,res)=>{
-//     res.send('Hey from ...')
-// })
+app.get('/',(req,res)=>{
+    res.send('Running backed successfully....')
+})
 
 app.use("/api/v1/tasks", tasks);
 
