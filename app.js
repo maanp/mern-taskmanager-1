@@ -2,10 +2,10 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const tasks = require("./routes/tasks");
-require("dotenv").config();
+// require("dotenv").config();
 const connectDb = require("./db/connect");
 const notFound = require("./middleware/not-found");
-
+if (process.env.NODE_ENV !== 'production') require('dotenv').config()
 // middleware
 app.use(cors());
 app.use(express.static("./public"));
